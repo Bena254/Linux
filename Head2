@@ -1,0 +1,10 @@
+declare -i len=0
+while true; do
+read -d '$' line
+let "len = $len + ${#line}"
+#echo "$len"
+if [[ $len -ge 20 ]]; then
+echo "${line:0:20}"
+fi
+if [[ ${#line} -eq 0 ]]; then break; fi
+done
